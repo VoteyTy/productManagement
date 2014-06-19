@@ -16,4 +16,5 @@
 - (IBAction)btnLogin:(id)sender;
 - (IBAction)btnForgetpwd:(id)sender;
 
+- (IBAction)btnRegister:(id)sender;
 @end

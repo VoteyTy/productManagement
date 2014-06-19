@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18299BB21952D331001EEBF8 /* AddNewProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 18299BAD1952D331001EEBF8 /* AddNewProduct.m */; };
+		18299BB31952D331001EEBF8 /* AddNewProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18299BAE1952D331001EEBF8 /* AddNewProduct.xib */; };
+		18299BB41952D331001EEBF8 /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 18299BB01952D331001EEBF8 /* RegisterForm.m */; };
+		18299BB51952D331001EEBF8 /* RegisterForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18299BB11952D331001EEBF8 /* RegisterForm.xib */; };
 		1B8A30BE194FFBA300830F64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30BD194FFBA300830F64 /* Foundation.framework */; };
 		1B8A30C0194FFBA300830F64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30BF194FFBA300830F64 /* CoreGraphics.framework */; };
 		1B8A30C2194FFBA300830F64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30C1194FFBA300830F64 /* UIKit.framework */; };
@@ -51,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18299BAC1952D331001EEBF8 /* AddNewProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewProduct.h; sourceTree = "<group>"; };
+		18299BAD1952D331001EEBF8 /* AddNewProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewProduct.m; sourceTree = "<group>"; };
+		18299BAE1952D331001EEBF8 /* AddNewProduct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewProduct.xib; sourceTree = "<group>"; };
+		18299BAF1952D331001EEBF8 /* RegisterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterForm.h; sourceTree = "<group>"; };
+		18299BB01952D331001EEBF8 /* RegisterForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterForm.m; sourceTree = "<group>"; };
+		18299BB11952D331001EEBF8 /* RegisterForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterForm.xib; sourceTree = "<group>"; };
 		1B8A30BA194FFBA300830F64 /* product_management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = product_management.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8A30BD194FFBA300830F64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B8A30BF194FFBA300830F64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +171,12 @@
 		1B8A30C5194FFBA300830F64 /* product_management */ = {
 			isa = PBXGroup;
 			children = (
+				18299BAC1952D331001EEBF8 /* AddNewProduct.h */,
+				18299BAD1952D331001EEBF8 /* AddNewProduct.m */,
+				18299BAE1952D331001EEBF8 /* AddNewProduct.xib */,
+				18299BAF1952D331001EEBF8 /* RegisterForm.h */,
+				18299BB01952D331001EEBF8 /* RegisterForm.m */,
+				18299BB11952D331001EEBF8 /* RegisterForm.xib */,
 				1B8EEF691950332E00F6CA6C /* AFNetworking */,
 				1B8A30CE194FFBA300830F64 /* AppDelegate.h */,
 				1B8A30CF194FFBA300830F64 /* AppDelegate.m */,
@@ -316,6 +332,8 @@
 				1B8EEF6319500F1100F6CA6C /* LoginForm.xib in Resources */,
 				1B9E8A3819527C790081BCAB /* ForgetPassword.xib in Resources */,
 				1B8EEF681950308F00F6CA6C /* Home.xib in Resources */,
+				18299BB31952D331001EEBF8 /* AddNewProduct.xib in Resources */,
+				18299BB51952D331001EEBF8 /* RegisterForm.xib in Resources */,
 				1B8A30D5194FFBA300830F64 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18299BB41952D331001EEBF8 /* RegisterForm.m in Sources */,
 				1B8EEF821950332E00F6CA6C /* AFURLConnectionOperation.m in Sources */,
 				1B8EEF7D1950332E00F6CA6C /* AFHTTPRequestOperation.m in Sources */,
 				1B8EEF801950332E00F6CA6C /* AFNetworkReachabilityManager.m in Sources */,
@@ -346,6 +365,7 @@
 				1B8A30D0194FFBA300830F64 /* AppDelegate.m in Sources */,
 				1B8A30CC194FFBA300830F64 /* main.m in Sources */,
 				1B8EEF7E1950332E00F6CA6C /* AFHTTPRequestOperationManager.m in Sources */,
+				18299BB21952D331001EEBF8 /* AddNewProduct.m in Sources */,
 				1B8EEF881950336F00F6CA6C /* APIClientIOS.m in Sources */,
 				1B8EEF811950332E00F6CA6C /* AFSecurityPolicy.m in Sources */,
 				1B8A30D3194FFBA300830F64 /* product_management.xcdatamodeld in Sources */,

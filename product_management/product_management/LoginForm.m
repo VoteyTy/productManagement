@@ -10,6 +10,8 @@
 #import "Home.h"
 #import "ForgetPassword.h"
 #import "APIClientIOS.h"
+#import "AddNewProduct.h"
+#import "RegisterForm.h"
 
 @interface LoginForm (){
     APIClientIOS * apiclient;
@@ -103,5 +105,12 @@
     
     ForgetPassword * objForgetPwd = [[ForgetPassword alloc] init];
     [self.navigationController pushViewController:objForgetPwd animated:YES];
+}
+
+- (IBAction)btnRegister:(id)sender {
+    RegisterForm * objRegister = [[RegisterForm alloc] initWithNibName:@"RegisterForm" bundle:nil];
+    //AddNewProduct* objRegister = [[AddNewProduct alloc] initWithNibName:@"AddNewProduct" bundle:nil];
+    
+    [self.navigationController pushViewController:objRegister animated:YES];
 }
 @end
