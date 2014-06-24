@@ -2,9 +2,8 @@
 //  RegisterForm.m
 //  product_management
 //
-//  Created by Apple on 6/17/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
-//
+//  Created by SOEUNG Channy on 6/17/14.
+
 
 #import "RegisterForm.h"
 
@@ -109,6 +108,7 @@ bool moved;
                               @"User[address]":txtAddAddress,@"User[password]":txtAddPassword,@"User[datecreated]":resultStringDate
                               };
         APIClientIOS *client = [APIClientIOS sharedClient];
+        [client.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         [client.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];//apikey for security that we put it in AppController of cakephp
         
         [client POST:@"users.json" parameters:addData success:^(NSURLSessionDataTask *task, id responseObject) {

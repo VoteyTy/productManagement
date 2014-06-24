@@ -11,6 +11,17 @@
 		18299BB31952D331001EEBF8 /* AddNewProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18299BAE1952D331001EEBF8 /* AddNewProduct.xib */; };
 		18299BB41952D331001EEBF8 /* RegisterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 18299BB01952D331001EEBF8 /* RegisterForm.m */; };
 		18299BB51952D331001EEBF8 /* RegisterForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18299BB11952D331001EEBF8 /* RegisterForm.xib */; };
+		183169761953CEF700B51583 /* accer1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 183169571953CEF700B51583 /* accer1.jpg */; };
+		183169771953CEF700B51583 /* dell1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 183169581953CEF700B51583 /* dell1.jpg */; };
+		183169781953CEF700B51583 /* apple1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 183169591953CEF700B51583 /* apple1.jpg */; };
+		183169791953CEF700B51583 /* desktop1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695A1953CEF700B51583 /* desktop1.jpg */; };
+		1831697A1953CEF700B51583 /* desktop2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695B1953CEF700B51583 /* desktop2.jpg */; };
+		1831697B1953CEF700B51583 /* printer1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695C1953CEF700B51583 /* printer1.jpg */; };
+		1831697C1953CEF700B51583 /* printer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695D1953CEF700B51583 /* printer2.jpg */; };
+		1831697D1953CEF700B51583 /* scanner1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695E1953CEF700B51583 /* scanner1.jpg */; };
+		1831697E1953CEF700B51583 /* scanner2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1831695F1953CEF700B51583 /* scanner2.jpg */; };
+		183169A21953D2DE00B51583 /* ProductList.m in Sources */ = {isa = PBXBuildFile; fileRef = 183169A01953D2DE00B51583 /* ProductList.m */; };
+		183169A31953D2DE00B51583 /* ProductList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183169A11953D2DE00B51583 /* ProductList.xib */; };
 		1B8A30BE194FFBA300830F64 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30BD194FFBA300830F64 /* Foundation.framework */; };
 		1B8A30C0194FFBA300830F64 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30BF194FFBA300830F64 /* CoreGraphics.framework */; };
 		1B8A30C2194FFBA300830F64 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8A30C1194FFBA300830F64 /* UIKit.framework */; };
@@ -61,6 +72,18 @@
 		18299BAF1952D331001EEBF8 /* RegisterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterForm.h; sourceTree = "<group>"; };
 		18299BB01952D331001EEBF8 /* RegisterForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterForm.m; sourceTree = "<group>"; };
 		18299BB11952D331001EEBF8 /* RegisterForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterForm.xib; sourceTree = "<group>"; };
+		183169571953CEF700B51583 /* accer1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = accer1.jpg; sourceTree = "<group>"; };
+		183169581953CEF700B51583 /* dell1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dell1.jpg; sourceTree = "<group>"; };
+		183169591953CEF700B51583 /* apple1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple1.jpg; sourceTree = "<group>"; };
+		1831695A1953CEF700B51583 /* desktop1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = desktop1.jpg; sourceTree = "<group>"; };
+		1831695B1953CEF700B51583 /* desktop2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = desktop2.jpg; sourceTree = "<group>"; };
+		1831695C1953CEF700B51583 /* printer1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = printer1.jpg; sourceTree = "<group>"; };
+		1831695D1953CEF700B51583 /* printer2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = printer2.jpg; sourceTree = "<group>"; };
+		1831695E1953CEF700B51583 /* scanner1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scanner1.jpg; sourceTree = "<group>"; };
+		1831695F1953CEF700B51583 /* scanner2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scanner2.jpg; sourceTree = "<group>"; };
+		1831699F1953D2DE00B51583 /* ProductList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductList.h; path = ../ProductList.h; sourceTree = "<group>"; };
+		183169A01953D2DE00B51583 /* ProductList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductList.m; path = ../ProductList.m; sourceTree = "<group>"; };
+		183169A11953D2DE00B51583 /* ProductList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductList.xib; path = ../ProductList.xib; sourceTree = "<group>"; };
 		1B8A30BA194FFBA300830F64 /* product_management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = product_management.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8A30BD194FFBA300830F64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B8A30BF194FFBA300830F64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,9 +160,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183169561953CEF700B51583 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				183169571953CEF700B51583 /* accer1.jpg */,
+				183169581953CEF700B51583 /* dell1.jpg */,
+				183169591953CEF700B51583 /* apple1.jpg */,
+				1831695A1953CEF700B51583 /* desktop1.jpg */,
+				1831695B1953CEF700B51583 /* desktop2.jpg */,
+				1831695C1953CEF700B51583 /* printer1.jpg */,
+				1831695D1953CEF700B51583 /* printer2.jpg */,
+				1831695E1953CEF700B51583 /* scanner1.jpg */,
+				1831695F1953CEF700B51583 /* scanner2.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		1B8A30B1194FFBA300830F64 = {
 			isa = PBXGroup;
 			children = (
+				183169561953CEF700B51583 /* images */,
 				1B8A30C5194FFBA300830F64 /* product_management */,
 				1B8A30E2194FFBA400830F64 /* product_managementTests */,
 				1B8A30BC194FFBA300830F64 /* Frameworks */,
@@ -171,6 +211,9 @@
 		1B8A30C5194FFBA300830F64 /* product_management */ = {
 			isa = PBXGroup;
 			children = (
+				183169A11953D2DE00B51583 /* ProductList.xib */,
+				183169A01953D2DE00B51583 /* ProductList.m */,
+				1831699F1953D2DE00B51583 /* ProductList.h */,
 				18299BAC1952D331001EEBF8 /* AddNewProduct.h */,
 				18299BAD1952D331001EEBF8 /* AddNewProduct.m */,
 				18299BAE1952D331001EEBF8 /* AddNewProduct.xib */,
@@ -328,12 +371,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1831697B1953CEF700B51583 /* printer1.jpg in Resources */,
+				183169781953CEF700B51583 /* apple1.jpg in Resources */,
 				1B8A30CA194FFBA300830F64 /* InfoPlist.strings in Resources */,
+				183169A31953D2DE00B51583 /* ProductList.xib in Resources */,
 				1B8EEF6319500F1100F6CA6C /* LoginForm.xib in Resources */,
+				1831697C1953CEF700B51583 /* printer2.jpg in Resources */,
 				1B9E8A3819527C790081BCAB /* ForgetPassword.xib in Resources */,
 				1B8EEF681950308F00F6CA6C /* Home.xib in Resources */,
+				183169771953CEF700B51583 /* dell1.jpg in Resources */,
+				183169761953CEF700B51583 /* accer1.jpg in Resources */,
+				1831697E1953CEF700B51583 /* scanner2.jpg in Resources */,
 				18299BB31952D331001EEBF8 /* AddNewProduct.xib in Resources */,
 				18299BB51952D331001EEBF8 /* RegisterForm.xib in Resources */,
+				1831697A1953CEF700B51583 /* desktop2.jpg in Resources */,
+				183169791953CEF700B51583 /* desktop1.jpg in Resources */,
+				1831697D1953CEF700B51583 /* scanner1.jpg in Resources */,
 				1B8A30D5194FFBA300830F64 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +415,7 @@
 				1B9E8A3719527C790081BCAB /* ForgetPassword.m in Sources */,
 				1B8EEF671950308F00F6CA6C /* Home.m in Sources */,
 				1B8EEF841950332E00F6CA6C /* AFURLResponseSerialization.m in Sources */,
+				183169A21953D2DE00B51583 /* ProductList.m in Sources */,
 				1B8A30D0194FFBA300830F64 /* AppDelegate.m in Sources */,
 				1B8A30CC194FFBA300830F64 /* main.m in Sources */,
 				1B8EEF7E1950332E00F6CA6C /* AFHTTPRequestOperationManager.m in Sources */,

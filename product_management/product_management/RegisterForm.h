@@ -2,9 +2,8 @@
 //  RegisterForm.h
 //  product_management
 //
-//  Created by Apple on 6/17/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
-//
+//  Created by SOUENG Channy on 6/17/14.
+
 
 #import <UIKit/UIKit.h>
 #import "APIClientIOS.h"
