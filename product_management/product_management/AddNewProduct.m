@@ -2,9 +2,8 @@
 //  AddNewProduct.m
 //  product_management
 //
-//  Created by Apple on 6/19/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
-//
+//  Created by SOEUNG Channy on 6/19/14.
+
 
 #import "AddNewProduct.h"
 
@@ -13,16 +12,22 @@
 @end
 
 @implementation AddNewProduct
+
 NSString *txtAddProductName;
 NSString *txtAddProductPrice;
 NSString *txtAddProductDescription;
-NSString *txtAddProductCategory;
 NSString *txtAddImageName;
-NSString *getselected;
+NSNumber *getselected;
+NSNumber *txtAddCategory;
+
 NSString *resultStringDate;
 NSDateFormatter *dateFormatter;
 NSDate *currentTime;
 bool moved;
+UIImage *imgProduct;
+NSData *dataImage;
+
+@synthesize ivProduct;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,105 +44,95 @@ bool moved;
     // Do any additional setup after loading the view from its nib.
 }
 
+/**************** clear data in form when user click on button back ********************/
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    imgProduct = nil;
+    txtAddProductPrice = nil;
+    txtAddProductName = nil;
+    txtAddProductDescription = nil;
+    getselected = nil;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [self.view endEditing:YES];
-    
-}
-
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//
-//
-//  [textField resignFirstResponder];
-//
-//   return NO;
-//}
--(void)textFieldDidBeginEditing:(UITextField *)textField {
-    if(!moved) {
-        [self animateViewToPosition:self.view directionUP:YES];
-        moved = YES;
-    }
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField {
-    [textField resignFirstResponder];
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    if(moved) {
-        [self animateViewToPosition:self.view directionUP:NO];
-    }
-    moved = NO;
-    return YES;
-}
-
-
--(void)animateViewToPosition:(UIView *)viewToMove directionUP:(BOOL)up {
-    
-    const int movementDistance = -70; // tweak as needed
-    const float movementDuration = 0.3f; // tweak as needed
-    
-    int movement = (up ? movementDistance : -movementDistance);
-    [UIView beginAnimations: @"animateTextField" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    viewToMove.frame = CGRectOffset(viewToMove.frame, 0, movement);
-    [UIView commitAnimations];
-}
 
 
 - (IBAction)btnBrowseImage:(id)sender {
+    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    picker.allowsEditing=TRUE;
+    [self presentViewController:picker animated:YES completion:nil];
 }
+
+/****** get image from select *****/
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    imgProduct = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    self.imageView = photo;
+    dataImage = UIImageJPEGRepresentation([info objectForKey:@"UIImagePickerControllerOriginalImage"],1);
+    ivProduct.image = [[UIImage alloc] initWithData:dataImage];
+    //NSLog(@"Image Selected %@",[[UIImage alloc] initWithData:dataImage]);
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    //NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
+    NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
+    
+    NSString *imageName = [imagePath lastPathComponent];//get image name
+    NSLog(@"Image Name %@",imageName);
+}
+
+
 /**************select category ***************/
 - (IBAction)btnSelectCategories:(id)sender {
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Product Category" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Laptop Computer", @"Desktop Computer", @"Printer", @"Scanner", @"Monitor", nil];
+    [self.view endEditing:YES];//for hid keyborad
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Product Category" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Computer", @"Smart Phone", @"Printer", @"Scanner", @"Monitor", nil];
     
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault; [actionSheet showInView:self.view];
     
 }
-
-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
    
     switch (buttonIndex)
     {
         case 0:
-            getselected = @"Laptop Computer";
+            getselected = [NSNumber numberWithInt:1];
             NSLog(@"selected %@",getselected);
             
             break;
         case 1:
-            getselected = @"Desktop Computer";
+            getselected = [NSNumber numberWithInt:2];
             NSLog(@"selected %@",getselected);
             break;
         case 2:
-           getselected= @"Printer";
+            getselected = [NSNumber numberWithInt:3];
             NSLog(@"selected %@",getselected);
             break;
         case 3:
-            getselected = @"Scanner";
+            getselected = [NSNumber numberWithInt:4];
             NSLog(@"selected %@",getselected);
             break;
         case 4:
-           getselected = @"Monitor";
+            getselected = [NSNumber numberWithInt:5];
             NSLog(@"selected %@",getselected);
             break;
         
     } 
 }
 - (IBAction)btnSaveProduct:(id)sender {
-    txtAddProductName = self.txtProductName.text;
-    txtAddProductPrice = self.txtProductPrice.text;
-    txtAddProductDescription = self.txtProductionDescription.text;
-    txtAddProductCategory = getselected;
+    txtAddProductName = [self.txtProductName.text stringByTrimmingCharactersInSet:
+                         [NSCharacterSet whitespaceCharacterSet]];
+    txtAddProductPrice = [self.txtProductPrice.text stringByTrimmingCharactersInSet:
+                          [NSCharacterSet whitespaceCharacterSet]];
+    txtAddProductDescription = [self.txtProductionDescription.text stringByTrimmingCharactersInSet:
+                                [NSCharacterSet whitespaceCharacterSet]];
+    txtAddCategory = getselected;
     currentTime = [NSDate date];
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
@@ -145,23 +140,52 @@ bool moved;
     NSLog(@"ProductName %@",txtAddProductName);
     NSLog(@"ProductPrice %@",txtAddProductPrice);
     NSLog(@"ProductDescription %@",txtAddProductDescription);
-    NSLog(@"ProductCategory %@",txtAddProductCategory);
+    NSLog(@"ProductCategory %@",txtAddCategory);
     NSLog(@"Result date %@",resultStringDate);
-//    NSDictionary *addData = @{@"Product[name]":txtAddProductName,@"Product[price]":txtAddProductPrice,@"Product[description]":txtAddProductDescription,
-//                              @"Product[image]":txtAddImageName,@"Product[category]":txtAddProductCategory,
-//                              @"Product[datecreated]":resultStringDate
-//                              };
-//    APIClientIOS *client = [APIClientIOS sharedClient];
-//    [client.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];//apikey for security that we put it in AppController of cakephp
-//    
-//    [client POST:@"products.json" parameters:addData success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSLog(@"Respone Object %@", responseObject);
-//    }
-//         failure:^(NSURLSessionDataTask *task, NSError *error) {
-//             NSLog(@"Error Message: %@", error);
-//         }];
     
+    
+    NSData *jpegData = UIImageJPEGRepresentation(imgProduct, 1);
+    NSTimeInterval currentInterval = [[NSDate date] timeIntervalSince1970];
+    NSString *filename = [NSString stringWithFormat:@"%f.jpg", currentInterval];
+    
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost/productApi/"]];
+    [manager.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
+     if (!imgProduct || [txtAddProductName isEqualToString:@""] || [txtAddProductPrice isEqualToString:@""] || !getselected) {
+         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please insert data in the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+         [alert show];
+     }else{
+
+        NSDictionary *parameters = @{@"category_id":txtAddCategory,
+                                     @"name": txtAddProductName,
+                                     @"price": txtAddProductPrice,
+                                     @"description": txtAddProductDescription,
+                                     @"image": filename,
+                                     @"datecreated": resultStringDate
+                                    };
+        AFHTTPRequestOperation *op = [manager POST:@"products.json" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            //do not put image inside parameters dictionary as I did, but append it!
+            [formData appendPartWithFileData:jpegData name:@"file" fileName:@"file.jpg" mimeType:@"image/jpeg"];
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"Success: %@",  responseObject);
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+                    
+        }
+            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            NSLog(@"Error: %@ ***** %@", operation.responseString, error);
+        }];
+        [op start];
+    }
 }
 
+#pragma mark - text field delegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == self.txtProductPrice)
+    {
+        textField.keyboardType = UIKeyboardTypeNumberPad;//add keyboard as number
+    }
+}
 
 @end
