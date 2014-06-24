@@ -53,6 +53,11 @@
 		1B8EEF881950336F00F6CA6C /* APIClientIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EEF871950336F00F6CA6C /* APIClientIOS.m */; };
 		1B9E8A3719527C790081BCAB /* ForgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E8A3519527C790081BCAB /* ForgetPassword.m */; };
 		1B9E8A3819527C790081BCAB /* ForgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9E8A3619527C790081BCAB /* ForgetPassword.xib */; };
+		1BA6143319597FAA006A5F82 /* EditProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6142C19597FAA006A5F82 /* EditProduct.m */; };
+		1BA6143419597FAA006A5F82 /* EditProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA6142D19597FAA006A5F82 /* EditProduct.xib */; };
+		1BA6143519597FAA006A5F82 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6142F19597FAA006A5F82 /* User.m */; };
+		1BA6143619597FAA006A5F82 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6143119597FAA006A5F82 /* UserProfile.m */; };
+		1BA6143719597FAA006A5F82 /* UserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA6143219597FAA006A5F82 /* UserProfile.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +137,14 @@
 		1B9E8A3419527C790081BCAB /* ForgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPassword.h; sourceTree = "<group>"; };
 		1B9E8A3519527C790081BCAB /* ForgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPassword.m; sourceTree = "<group>"; };
 		1B9E8A3619527C790081BCAB /* ForgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPassword.xib; sourceTree = "<group>"; };
+		1BA6142B19597FAA006A5F82 /* EditProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProduct.h; sourceTree = "<group>"; };
+		1BA6142C19597FAA006A5F82 /* EditProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProduct.m; sourceTree = "<group>"; };
+		1BA6142D19597FAA006A5F82 /* EditProduct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProduct.xib; sourceTree = "<group>"; };
+		1BA6142E19597FAA006A5F82 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1BA6142F19597FAA006A5F82 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1BA6143019597FAA006A5F82 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		1BA6143119597FAA006A5F82 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		1BA6143219597FAA006A5F82 /* UserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfile.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,9 +238,17 @@
 				1B8A30CF194FFBA300830F64 /* AppDelegate.m */,
 				1B8EEF861950336F00F6CA6C /* APIClientIOS.h */,
 				1B8EEF871950336F00F6CA6C /* APIClientIOS.m */,
+				1BA6142E19597FAA006A5F82 /* User.h */,
+				1BA6142F19597FAA006A5F82 /* User.m */,
 				1B8EEF5F19500F1100F6CA6C /* LoginForm.h */,
 				1B8EEF6019500F1100F6CA6C /* LoginForm.m */,
 				1B8EEF6119500F1100F6CA6C /* LoginForm.xib */,
+				1BA6142B19597FAA006A5F82 /* EditProduct.h */,
+				1BA6142C19597FAA006A5F82 /* EditProduct.m */,
+				1BA6142D19597FAA006A5F82 /* EditProduct.xib */,
+				1BA6143019597FAA006A5F82 /* UserProfile.h */,
+				1BA6143119597FAA006A5F82 /* UserProfile.m */,
+				1BA6143219597FAA006A5F82 /* UserProfile.xib */,
 				1B9E8A3419527C790081BCAB /* ForgetPassword.h */,
 				1B9E8A3519527C790081BCAB /* ForgetPassword.m */,
 				1B9E8A3619527C790081BCAB /* ForgetPassword.xib */,
@@ -372,8 +393,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1831697B1953CEF700B51583 /* printer1.jpg in Resources */,
+				1BA6143419597FAA006A5F82 /* EditProduct.xib in Resources */,
 				183169781953CEF700B51583 /* apple1.jpg in Resources */,
 				1B8A30CA194FFBA300830F64 /* InfoPlist.strings in Resources */,
+				1BA6143719597FAA006A5F82 /* UserProfile.xib in Resources */,
 				183169A31953D2DE00B51583 /* ProductList.xib in Resources */,
 				1B8EEF6319500F1100F6CA6C /* LoginForm.xib in Resources */,
 				1831697C1953CEF700B51583 /* printer2.jpg in Resources */,
@@ -409,10 +432,13 @@
 				18299BB41952D331001EEBF8 /* RegisterForm.m in Sources */,
 				1B8EEF821950332E00F6CA6C /* AFURLConnectionOperation.m in Sources */,
 				1B8EEF7D1950332E00F6CA6C /* AFHTTPRequestOperation.m in Sources */,
+				1BA6143319597FAA006A5F82 /* EditProduct.m in Sources */,
+				1BA6143619597FAA006A5F82 /* UserProfile.m in Sources */,
 				1B8EEF801950332E00F6CA6C /* AFNetworkReachabilityManager.m in Sources */,
 				1B8EEF851950332E00F6CA6C /* AFURLSessionManager.m in Sources */,
 				1B8EEF831950332E00F6CA6C /* AFURLRequestSerialization.m in Sources */,
 				1B9E8A3719527C790081BCAB /* ForgetPassword.m in Sources */,
+				1BA6143519597FAA006A5F82 /* User.m in Sources */,
 				1B8EEF671950308F00F6CA6C /* Home.m in Sources */,
 				1B8EEF841950332E00F6CA6C /* AFURLResponseSerialization.m in Sources */,
 				183169A21953D2DE00B51583 /* ProductList.m in Sources */,

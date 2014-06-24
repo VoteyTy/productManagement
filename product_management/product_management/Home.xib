@@ -7,6 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Home">
             <connections>
                 <outlet property="segementControl" destination="r9v-iH-hHw" id="E5n-Ec-sg0"/>
+                <outlet property="tabBar" destination="nTN-fw-b86" id="jYg-3Z-XDw"/>
+                <outlet property="tabLogout" destination="U1H-bV-EXT" id="L6k-L9-JPP"/>
+                <outlet property="tabUser" destination="xUu-k5-7rW" id="1Dg-Wk-NBk"/>
+                <outlet property="vhome" destination="i5M-Pr-FkT" id="ONi-nP-Jsj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,6 +33,18 @@
                         <action selector="segementedControl:" destination="-1" eventType="valueChanged" id="ZGI-T0-w0A"/>
                     </connections>
                 </segmentedControl>
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-fw-b86">
+                    <rect key="frame" x="0.0" y="511" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem title="Logout" id="U1H-bV-EXT" userLabel="Tab Bar Item - Logout"/>
+                        <tabBarItem tag="1" title="User Profile" id="xUu-k5-7rW"/>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="wby-L1-COn"/>
+                    </connections>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
