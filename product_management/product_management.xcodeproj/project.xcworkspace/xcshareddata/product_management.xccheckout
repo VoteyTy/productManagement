@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D85A33F1-108C-4FC1-82AD-07857EF93416</string>
+	<string>02C299CD-34F7-4A7E-83DA-69CF71AD5B97</string>
 	<key>IDESourceControlProjectName</key>
 	<string>product_management</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>14507EB3-0684-47B3-9300-C3B07DCE3169</key>
-		<string>https://github.com/VoteyTy/productManagement.git</string>
+		<key>A3E871C6-A975-4D3A-B0C1-3D796B582195</key>
+		<string>https://github.com/VoteyTy/IOSSimpleProject_productManagement.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>product_management/product_management.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>14507EB3-0684-47B3-9300-C3B07DCE3169</key>
+		<key>A3E871C6-A975-4D3A-B0C1-3D796B582195</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/VoteyTy/productManagement.git</string>
+	<string>https://github.com/VoteyTy/IOSSimpleProject_productManagement.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>14507EB3-0684-47B3-9300-C3B07DCE3169</string>
+	<string>A3E871C6-A975-4D3A-B0C1-3D796B582195</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>14507EB3-0684-47B3-9300-C3B07DCE3169</string>
+			<string>A3E871C6-A975-4D3A-B0C1-3D796B582195</string>
 			<key>IDESourceControlWCCName</key>
-			<string>productManagement</string>
+			<string>IOSSimpleProject_productManagement</string>
 		</dict>
 	</array>
 </dict>

@@ -42,6 +42,14 @@
 		1B8EEF881950336F00F6CA6C /* APIClientIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EEF871950336F00F6CA6C /* APIClientIOS.m */; };
 		1B9E8A3719527C790081BCAB /* ForgetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E8A3519527C790081BCAB /* ForgetPassword.m */; };
 		1B9E8A3819527C790081BCAB /* ForgetPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9E8A3619527C790081BCAB /* ForgetPassword.xib */; };
+		1BA5A3801953C743008DA1C4 /* Logout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA5A37E1953C743008DA1C4 /* Logout.m */; };
+		1BA5A3811953C743008DA1C4 /* Logout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5A37F1953C743008DA1C4 /* Logout.xib */; };
+		1BA5A3831953D0FE008DA1C4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5A3821953D0FE008DA1C4 /* image.jpg */; };
+		1BA5A3881953D6B1008DA1C4 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA5A3861953D6B1008DA1C4 /* UserProfile.m */; };
+		1BA5A3891953D6B1008DA1C4 /* UserProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5A3871953D6B1008DA1C4 /* UserProfile.xib */; };
+		1BA5A38D1953E5FB008DA1C4 /* EditProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA5A38B1953E5FB008DA1C4 /* EditProduct.m */; };
+		1BA5A38E1953E5FB008DA1C4 /* EditProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5A38C1953E5FB008DA1C4 /* EditProduct.xib */; };
+		1BA6142A19591C9E006A5F82 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6142919591C9E006A5F82 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +117,18 @@
 		1B9E8A3419527C790081BCAB /* ForgetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPassword.h; sourceTree = "<group>"; };
 		1B9E8A3519527C790081BCAB /* ForgetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPassword.m; sourceTree = "<group>"; };
 		1B9E8A3619527C790081BCAB /* ForgetPassword.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPassword.xib; sourceTree = "<group>"; };
+		1BA5A37D1953C743008DA1C4 /* Logout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logout.h; sourceTree = "<group>"; };
+		1BA5A37E1953C743008DA1C4 /* Logout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logout.m; sourceTree = "<group>"; };
+		1BA5A37F1953C743008DA1C4 /* Logout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Logout.xib; sourceTree = "<group>"; };
+		1BA5A3821953D0FE008DA1C4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		1BA5A3851953D6B1008DA1C4 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		1BA5A3861953D6B1008DA1C4 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		1BA5A3871953D6B1008DA1C4 /* UserProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfile.xib; sourceTree = "<group>"; };
+		1BA5A38A1953E5FB008DA1C4 /* EditProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProduct.h; sourceTree = "<group>"; };
+		1BA5A38B1953E5FB008DA1C4 /* EditProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProduct.m; sourceTree = "<group>"; };
+		1BA5A38C1953E5FB008DA1C4 /* EditProduct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProduct.xib; sourceTree = "<group>"; };
+		1BA6142819591C9E006A5F82 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1BA6142919591C9E006A5F82 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,26 +191,38 @@
 		1B8A30C5194FFBA300830F64 /* product_management */ = {
 			isa = PBXGroup;
 			children = (
-				18299BAC1952D331001EEBF8 /* AddNewProduct.h */,
-				18299BAD1952D331001EEBF8 /* AddNewProduct.m */,
-				18299BAE1952D331001EEBF8 /* AddNewProduct.xib */,
-				18299BAF1952D331001EEBF8 /* RegisterForm.h */,
-				18299BB01952D331001EEBF8 /* RegisterForm.m */,
-				18299BB11952D331001EEBF8 /* RegisterForm.xib */,
 				1B8EEF691950332E00F6CA6C /* AFNetworking */,
-				1B8A30CE194FFBA300830F64 /* AppDelegate.h */,
-				1B8A30CF194FFBA300830F64 /* AppDelegate.m */,
 				1B8EEF861950336F00F6CA6C /* APIClientIOS.h */,
 				1B8EEF871950336F00F6CA6C /* APIClientIOS.m */,
+				1BA6142819591C9E006A5F82 /* User.h */,
+				1BA6142919591C9E006A5F82 /* User.m */,
+				1B8A30CE194FFBA300830F64 /* AppDelegate.h */,
+				1B8A30CF194FFBA300830F64 /* AppDelegate.m */,
 				1B8EEF5F19500F1100F6CA6C /* LoginForm.h */,
 				1B8EEF6019500F1100F6CA6C /* LoginForm.m */,
 				1B8EEF6119500F1100F6CA6C /* LoginForm.xib */,
+				1BA5A37D1953C743008DA1C4 /* Logout.h */,
+				1BA5A37E1953C743008DA1C4 /* Logout.m */,
+				1BA5A37F1953C743008DA1C4 /* Logout.xib */,
+				1BA5A3851953D6B1008DA1C4 /* UserProfile.h */,
+				1BA5A3861953D6B1008DA1C4 /* UserProfile.m */,
+				1BA5A3871953D6B1008DA1C4 /* UserProfile.xib */,
 				1B9E8A3419527C790081BCAB /* ForgetPassword.h */,
 				1B9E8A3519527C790081BCAB /* ForgetPassword.m */,
 				1B9E8A3619527C790081BCAB /* ForgetPassword.xib */,
 				1B8EEF641950308F00F6CA6C /* Home.h */,
 				1B8EEF651950308F00F6CA6C /* Home.m */,
 				1B8EEF661950308F00F6CA6C /* Home.xib */,
+				18299BAC1952D331001EEBF8 /* AddNewProduct.h */,
+				18299BAD1952D331001EEBF8 /* AddNewProduct.m */,
+				18299BAE1952D331001EEBF8 /* AddNewProduct.xib */,
+				18299BAF1952D331001EEBF8 /* RegisterForm.h */,
+				18299BB01952D331001EEBF8 /* RegisterForm.m */,
+				18299BB11952D331001EEBF8 /* RegisterForm.xib */,
+				1BA5A38A1953E5FB008DA1C4 /* EditProduct.h */,
+				1BA5A38B1953E5FB008DA1C4 /* EditProduct.m */,
+				1BA5A38C1953E5FB008DA1C4 /* EditProduct.xib */,
+				1BA5A3841953D10F008DA1C4 /* image */,
 				1B8A30D4194FFBA300830F64 /* Images.xcassets */,
 				1B8A30D1194FFBA300830F64 /* product_management.xcdatamodeld */,
 				1B8A30C6194FFBA300830F64 /* Supporting Files */,
@@ -251,6 +283,14 @@
 				1B8EEF7C1950332E00F6CA6C /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		1BA5A3841953D10F008DA1C4 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				1BA5A3821953D0FE008DA1C4 /* image.jpg */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +372,13 @@
 				1B8EEF6319500F1100F6CA6C /* LoginForm.xib in Resources */,
 				1B9E8A3819527C790081BCAB /* ForgetPassword.xib in Resources */,
 				1B8EEF681950308F00F6CA6C /* Home.xib in Resources */,
+				1BA5A38E1953E5FB008DA1C4 /* EditProduct.xib in Resources */,
+				1BA5A3891953D6B1008DA1C4 /* UserProfile.xib in Resources */,
 				18299BB31952D331001EEBF8 /* AddNewProduct.xib in Resources */,
+				1BA5A3811953C743008DA1C4 /* Logout.xib in Resources */,
 				18299BB51952D331001EEBF8 /* RegisterForm.xib in Resources */,
 				1B8A30D5194FFBA300830F64 /* Images.xcassets in Resources */,
+				1BA5A3831953D0FE008DA1C4 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,18 +400,22 @@
 				18299BB41952D331001EEBF8 /* RegisterForm.m in Sources */,
 				1B8EEF821950332E00F6CA6C /* AFURLConnectionOperation.m in Sources */,
 				1B8EEF7D1950332E00F6CA6C /* AFHTTPRequestOperation.m in Sources */,
+				1BA5A38D1953E5FB008DA1C4 /* EditProduct.m in Sources */,
 				1B8EEF801950332E00F6CA6C /* AFNetworkReachabilityManager.m in Sources */,
+				1BA5A3881953D6B1008DA1C4 /* UserProfile.m in Sources */,
 				1B8EEF851950332E00F6CA6C /* AFURLSessionManager.m in Sources */,
 				1B8EEF831950332E00F6CA6C /* AFURLRequestSerialization.m in Sources */,
 				1B9E8A3719527C790081BCAB /* ForgetPassword.m in Sources */,
 				1B8EEF671950308F00F6CA6C /* Home.m in Sources */,
 				1B8EEF841950332E00F6CA6C /* AFURLResponseSerialization.m in Sources */,
+				1BA6142A19591C9E006A5F82 /* User.m in Sources */,
 				1B8A30D0194FFBA300830F64 /* AppDelegate.m in Sources */,
 				1B8A30CC194FFBA300830F64 /* main.m in Sources */,
 				1B8EEF7E1950332E00F6CA6C /* AFHTTPRequestOperationManager.m in Sources */,
 				18299BB21952D331001EEBF8 /* AddNewProduct.m in Sources */,
 				1B8EEF881950336F00F6CA6C /* APIClientIOS.m in Sources */,
 				1B8EEF811950332E00F6CA6C /* AFSecurityPolicy.m in Sources */,
+				1BA5A3801953C743008DA1C4 /* Logout.m in Sources */,
 				1B8A30D3194FFBA300830F64 /* product_management.xcdatamodeld in Sources */,
 				1B8EEF6219500F1100F6CA6C /* LoginForm.m in Sources */,
 				1B8EEF7F1950332E00F6CA6C /* AFHTTPSessionManager.m in Sources */,

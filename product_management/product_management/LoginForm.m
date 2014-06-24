@@ -12,9 +12,12 @@
 #import "APIClientIOS.h"
 #import "AddNewProduct.h"
 #import "RegisterForm.h"
+#import "User.h"
+
 
 @interface LoginForm (){
     APIClientIOS * apiclient;
+    NSString * userNameText, *passWordText;
 
 }
 
@@ -38,6 +41,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    
     apiclient = [[APIClientIOS alloc] init];
     apiclient = [APIClientIOS sharedClient];
     
@@ -54,7 +59,7 @@
 
 - (IBAction)btnLogin:(id)sender {
     
-    NSString * userEmail = txtEmail.text;
+    NSString * userEmail = txtEmail.text;  // get value from text field
     NSString * userPwd = txtPwd.text;
     if ([userEmail isEqualToString:@""])
     {
@@ -71,11 +76,11 @@
         [apiclient.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         [apiclient.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
         
-        NSDictionary * params = @{@"email": userEmail, @"password":userPwd};
+        NSDictionary * params = @{@"email": userEmail, @"password":userPwd};  // get data from text field
         
         [apiclient POST:@"users/login.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
             
-            NSLog(@"HI DB: %@",responseObject);
+            NSLog(@"HI DB: %@",responseObject); // users/loging.json is add parram to compare with api userscontroller login function 
             
             NSDictionary * objUser =[[NSDictionary alloc] initWithDictionary:[responseObject objectForKey:@"users"]];
             NSLog(@"Hi objUser:%@",objUser);
@@ -90,11 +95,24 @@
             {
                 NSLog(@"successful");
                 Home * objHome = [[Home alloc] init];
+                //objHome.userId = self.
                 [self.navigationController pushViewController:objHome animated:YES];
 //                NSData * conData = [NSKeyedArchiver archivedDataWithRootObject:objUser];
 //                NSLog(@"HI Condata: %@",conData);
             }
-           
+            
+//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//            [defaults setObject:responseObject forKey:@"UserLoginIdSession"];
+//            //    [defaults setObject:userNameText forKey:@"username"];
+//            //    [defaults setObject:passWordText forKey:@"password"];
+//            
+//            NSLog(@" Defaults %@",[defaults objectForKey:@"UserLoginIdSession"]);
+//            [defaults synchronize];
+             User * objMain = [[User alloc] init];
+            [objMain saveSession:responseObject];
+//            NSDictionary * reciver = [objMain readSession];
+//            NSLog(@" HI reciver: %@",reciver);
+            
         } failure:^(NSURLSessionDataTask *task, NSError *error){
             NSLog(@"Errors");
         }];
