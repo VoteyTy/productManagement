@@ -8,7 +8,7 @@
 
 #import "APIClientIOS.h"
 
-static NSString * const BaseUrl = @"http://localhost/productApi/";
+static NSString * const BaseUrl = @"http://localhost:8888/productApi/";
 
 @implementation APIClientIOS
 
