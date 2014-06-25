@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Home : UIViewController
+@interface Home : UIViewController<UITabBarDelegate>
 
 @property (nonatomic,retain) NSString * userId;
 
 - (IBAction)segementedControl:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segementControl;
+@property (strong, nonatomic) IBOutlet UITabBar *tabBar;
+
+@property (strong, nonatomic) IBOutlet UITabBarItem *tabLogout;
+@property (strong, nonatomic) IBOutlet UITabBarItem *tabUser;
+@property (strong, nonatomic) IBOutlet UIView *vhome;
+
 @end
