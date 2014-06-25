@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APIClientIOS.h"
+#import "LoginForm.h"
 
 @interface RegisterForm : UIViewController<UITextFieldDelegate>
 

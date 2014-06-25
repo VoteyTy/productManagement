@@ -10,12 +10,10 @@
 #import "APIClientIOS.h"
 
 @interface ProductList (){
-    //NSDictionary *productCategory;
-    //NSArray *productSectionTitles;
-    //NSMutableArray *pictureProduct;
     
     APIClientIOS *apiClient;
     NSMutableArray *productCates;
+    NSMutableArray *cateProducts;
 }
 
 @end
@@ -104,28 +102,53 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Remove the row from data model
-    [productCates removeObjectAtIndex:indexPath.row];
-    
-    // Request table view to reload
-    [tableView reloadData];
-    
-//    NSDictionary *params = @{@"Recipe[title]": @"AFNetworking Title 3",
-//                             @"Recipe[body]": @"AFNetworking Title 2 is updated to AFNetworking Title 3"};
-//    
-//    // 2 is Recipe ID that need to delete
-//  
-//    APIClientIOS *client = [APIClientIOS sharedClient];
-//    [client.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [client.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];//apikey for security that we put it in AppController of cakephp
-//    [client DELETE:@"products/1.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSLog(@"%@", responseObject);
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"Error Message: %@", error);
-//    }];
-    
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            
+            self.indexPathToBeDeleted = indexPath;
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                            message:@"Are you sure?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"NO"
+                                                  otherButtonTitles:@"YES", nil];
+            [alert show];
+            // do not delete it here. So far the alter has not even been shown yet. It will not been shown to the user before this current method is finished.
+        }
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // This method is invoked in response to the user's action. The altert view is about to disappear (or has been disappeard already - I am not sure)
+    
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"NO"])
+    {
+        NSLog(@"Nothing to do here");
+    }
+    else if([title isEqualToString:@"YES"])
+    {
+        NSDictionary *parameters = [[NSDictionary alloc] initWithDictionary:[[[productCates objectAtIndex:self.indexPathToBeDeleted.section] objectForKey:@"Product"] objectAtIndex:self.indexPathToBeDeleted.row]];
+        NSLog(@"Id of product %@",[parameters objectForKey:@"id"]);
+        NSString *ids = [parameters objectForKey:@"id"];
+        NSLog(@"ID of Product %@", [NSString stringWithFormat:@"%@products/%@",ids,@"%@.json"]);
+        
+        APIClientIOS *client = [APIClientIOS sharedClient];
+        [client.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+        [client DELETE:[NSString stringWithFormat:@"products/%@.json", ids] parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"products/%@.json", ids);
+            //[self.tableView reloadData];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"Error Message: %@", error);
+        }];
 
+        
+        cateProducts = [[NSMutableArray alloc] initWithArray:[[productCates objectAtIndex:self.indexPathToBeDeleted.section] objectForKey:@"Product"]];
+        NSLog(@"before %@", cateProducts);
+        [cateProducts removeObjectAtIndex:self.indexPathToBeDeleted.row];
+        [self.reloadProduct reloadData];
+        NSLog(@"Delete the cell");
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
