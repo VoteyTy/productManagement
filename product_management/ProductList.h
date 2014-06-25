@@ -11,4 +11,6 @@
 
 @interface ProductList : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblProduct;
+@property (weak, nonatomic) IBOutlet UITableView *reloadProduct;
+@property (strong, nonatomic) NSIndexPath *indexPathToBeDeleted;
 @end

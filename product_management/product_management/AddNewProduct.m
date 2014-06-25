@@ -6,6 +6,7 @@
 
 
 #import "AddNewProduct.h"
+#import "ProductList.h"
 
 @interface AddNewProduct ()
 
@@ -27,7 +28,7 @@ bool moved;
 UIImage *imgProduct;
 NSData *dataImage;
 
-@synthesize ivProduct;
+//@synthesize ivProduct;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,7 +53,6 @@ NSData *dataImage;
     txtAddProductPrice = nil;
     txtAddProductName = nil;
     txtAddProductDescription = nil;
-    getselected = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +77,7 @@ NSData *dataImage;
     imgProduct = [info objectForKey:UIImagePickerControllerOriginalImage];
 //    self.imageView = photo;
     dataImage = UIImageJPEGRepresentation([info objectForKey:@"UIImagePickerControllerOriginalImage"],1);
-    ivProduct.image = [[UIImage alloc] initWithData:dataImage];
+    //ivProduct.image = [[UIImage alloc] initWithData:dataImage];
     //NSLog(@"Image Selected %@",[[UIImage alloc] initWithData:dataImage]);
     [picker dismissViewControllerAnimated:YES completion:nil];
     //NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
@@ -90,7 +90,7 @@ NSData *dataImage;
 
 /**************select category ***************/
 - (IBAction)btnSelectCategories:(id)sender {
-    [self.view endEditing:YES];//for hid keyborad
+    [self.view endEditing:YES];//for hide keyborad
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Product Category" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Computer", @"Smart Phone", @"Printer", @"Scanner", @"Monitor", nil];
     
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault; [actionSheet showInView:self.view];
@@ -168,6 +168,10 @@ NSData *dataImage;
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@",  responseObject);
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            ProductList* objAddNewProduct = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
+            
+            [self.navigationController pushViewController:objAddNewProduct animated:YES];
+
                     
         }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {

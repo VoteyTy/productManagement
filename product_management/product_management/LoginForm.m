@@ -70,7 +70,6 @@
     else
     {
         [apiclient.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [apiclient.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
         
         NSDictionary * params = @{@"email": userEmail, @"password":userPwd};
         
