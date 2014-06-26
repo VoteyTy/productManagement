@@ -108,10 +108,11 @@
 }
 
 - (IBAction)btnRegister:(id)sender {
-    RegisterForm * objRegister = [[RegisterForm alloc] initWithNibName:@"RegisterForm" bundle:nil];
-   //AddNewProduct* objAddNewProduct = [[AddNewProduct alloc] initWithNibName:@"AddNewProduct" bundle:nil];
-   //ProductList* objProductList = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
+   // RegisterForm * objRegister = [[RegisterForm alloc] initWithNibName:@"RegisterForm" bundle:nil];
+    //AddNewProduct* objAddNewProduct = [[AddNewProduct alloc] initWithNibName:@"AddNewProduct" bundle:nil];
+   ProductList* objProductList = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
     
-    [self.navigationController pushViewController:objRegister animated:YES];
+    
+    [self.navigationController pushViewController:objProductList animated:YES];
 }
 @end

@@ -124,27 +124,30 @@ bool moved;
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please insert data in the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
     }else{
-        if([txtAddPassword isEqualToString:txtAddConPassword] && [self isValidEmail:txtAddEmail]){
-            NSDictionary *addData = @{@"User[firstname]":txtAddfirstName,@"User[lastname]":txtAddLastName,@"User[email]":txtAddEmail,
-                                      @"User[address]":txtAddAddress,@"User[password]":txtAddPassword,@"User[datecreated]":resultStringDate
-                                      };
+        
+        if (![txtAddPassword isEqualToString:txtAddConPassword]) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Password do not match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }else if(![self isValidEmail:txtAddEmail]){
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Invalid Email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else{
+            NSDictionary *addData = @{@"User[firstname]":txtAddfirstName,@"User[lastname]":txtAddLastName,@"User[email]":txtAddEmail,@"User[address]":txtAddAddress,@"User[password]":txtAddPassword,@"User[datecreated]":resultStringDate
+            };
             APIClientIOS *client = [APIClientIOS sharedClient];
             [client.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
             [client.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];//apikey for security that we put it in AppController of cakephp
-            
+
             [client POST:@"users.json" parameters:addData success:^(NSURLSessionDataTask *task, id responseObject) {
-                NSLog(@"Respone Object %@", responseObject);
-                LoginForm * objRegister = [[LoginForm alloc] initWithNibName:@"LoginForm" bundle:nil];
-                    [self.navigationController pushViewController:objRegister animated:YES];
+            NSLog(@"Respone Object %@", responseObject);
+            LoginForm * objRegister = [[LoginForm alloc] initWithNibName:@"LoginForm" bundle:nil];
+             [self.navigationController pushViewController:objRegister animated:YES];
 
             }
-             failure:^(NSURLSessionDataTask *task, NSError *error) {
-                 NSLog(@"Error Message: %@", error);
-             }];
-        
-        }else{
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Password do not match or Invalid Email" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
+            failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"Error Message: %@", error);
+            }];
             
         }
 

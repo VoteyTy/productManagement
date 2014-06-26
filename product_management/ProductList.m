@@ -34,7 +34,6 @@
     [super viewDidLoad];
     
     apiClient = [APIClientIOS sharedClient];
-    
     // load data from api
     [apiClient GET:@"categories.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"Respone Object %@", responseObject);
@@ -48,16 +47,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//    return [productSectionTitles count];
     return [productCates count];
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    
     NSString *str = [NSString stringWithFormat:@"%@: (%i)", [[[productCates objectAtIndex:section] objectForKey:@"Category"] objectForKey:@"name"], [[[productCates objectAtIndex:section] objectForKey:@"Product"] count]];
-    
     return str;
-    
 }
 
 /*********************** set background on Section Title **************************/
@@ -90,16 +85,17 @@
     
     NSDictionary *product = [[NSDictionary alloc] initWithDictionary:[[[productCates objectAtIndex:indexPath.section] objectForKey:@"Product"] objectAtIndex:indexPath.row]];
     
-    cell.textLabel.text = [product objectForKey:@"name"];
-    cell.detailTextLabel.text = [product objectForKey:@"price"];
+    //cell.textLabel.text = [product objectForKey:@"name"];
+    cell.textLabel.text=[NSString stringWithFormat: @"Name: %@", [product objectForKey:@"name"]];
+    //cell.detailTextLabel.text = [product objectForKey:@"price"];
+    cell.detailTextLabel.text=[NSString stringWithFormat: @"Price: %@ USD", [product objectForKey:@"price"]];
     
     NSURL* aURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/productApi/product/%@", [product objectForKey:@"image"]]];
     NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     cell.imageView.image = [UIImage imageWithData:data];
-    
-    
     return cell;
 }
+/*********** Confirm Message before Delete Record ***********/
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
         if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -112,9 +108,11 @@
                                                   cancelButtonTitle:@"NO"
                                                   otherButtonTitles:@"YES", nil];
             [alert show];
-            // do not delete it here. So far the alter has not even been shown yet. It will not been shown to the user before this current method is finished.
+            
         }
+    
 }
+/************* For check is user NO or YES **************/
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     // This method is invoked in response to the user's action. The altert view is about to disappear (or has been disappeard already - I am not sure)
@@ -124,13 +122,13 @@
     {
         NSLog(@"Nothing to do here");
     }
+    /************** If user click on YES, it delete record ***************/
     else if([title isEqualToString:@"YES"])
     {
         NSDictionary *parameters = [[NSDictionary alloc] initWithDictionary:[[[productCates objectAtIndex:self.indexPathToBeDeleted.section] objectForKey:@"Product"] objectAtIndex:self.indexPathToBeDeleted.row]];
         NSLog(@"Id of product %@",[parameters objectForKey:@"id"]);
         NSString *ids = [parameters objectForKey:@"id"];
         NSLog(@"ID of Product %@", [NSString stringWithFormat:@"%@products/%@",ids,@"%@.json"]);
-        
         APIClientIOS *client = [APIClientIOS sharedClient];
         [client.requestSerializer setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
         [client DELETE:[NSString stringWithFormat:@"products/%@.json", ids] parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -140,8 +138,6 @@
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"Error Message: %@", error);
         }];
-
-        
         cateProducts = [[NSMutableArray alloc] initWithArray:[[productCates objectAtIndex:self.indexPathToBeDeleted.section] objectForKey:@"Product"]];
         NSLog(@"before %@", cateProducts);
         [cateProducts removeObjectAtIndex:self.indexPathToBeDeleted.row];

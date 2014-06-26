@@ -7,6 +7,7 @@
 
 #import "AddNewProduct.h"
 #import "ProductList.h"
+#import "Home.h"
 
 @interface AddNewProduct ()
 
@@ -88,7 +89,7 @@ NSData *dataImage;
 }
 
 
-/**************select category ***************/
+/************** select category ***************/
 - (IBAction)btnSelectCategories:(id)sender {
     [self.view endEditing:YES];//for hide keyborad
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Product Category" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:nil otherButtonTitles:@"Computer", @"Smart Phone", @"Printer", @"Scanner", @"Monitor", nil];
@@ -168,11 +169,9 @@ NSData *dataImage;
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@",  responseObject);
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            ProductList* objAddNewProduct = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
+            Home* objHome = [[Home alloc] initWithNibName:@"Home" bundle:nil];
             
-            [self.navigationController pushViewController:objAddNewProduct animated:YES];
-
-                    
+            [self.navigationController pushViewController:objHome animated:YES];
         }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
