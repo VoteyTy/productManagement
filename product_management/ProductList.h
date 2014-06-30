@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AFHTTPRequestOperationManager.h"
+#import "EditProduct.h"
+#import "UserProfile.h"
 
 @interface ProductList : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblProduct;
