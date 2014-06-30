@@ -9,6 +9,8 @@
 #import "ProductList.h"
 #import "APIClientIOS.h"
 
+
+
 @interface ProductList (){
     
     APIClientIOS *apiClient;
@@ -148,6 +150,19 @@
         [self.reloadProduct reloadData];
         NSLog(@"Delete the cell");
     }
+}
+// select row of table View
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSDictionary *product = [[NSDictionary alloc] initWithDictionary:[[[productCates objectAtIndex:indexPath.section] objectForKey:@"Product"] objectAtIndex:indexPath.row]];
+    NSString * objId = [product objectForKey:@"id"];
+    NSLog(@"HI :%@",objId);
+    EditProduct * objEditPro = [[EditProduct alloc] init];
+    objEditPro.proId = objId;
+    [self.navigationController pushViewController:objEditPro animated:YES];
+//    UserProfile * objEditPro = [[UserProfile alloc] init];
+//    [self.navigationController pushViewController:objEditPro animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
