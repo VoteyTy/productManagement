@@ -89,6 +89,7 @@
 		1831699F1953D2DE00B51583 /* ProductList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductList.h; path = ../ProductList.h; sourceTree = "<group>"; };
 		183169A01953D2DE00B51583 /* ProductList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductList.m; path = ../ProductList.m; sourceTree = "<group>"; };
 		183169A11953D2DE00B51583 /* ProductList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductList.xib; path = ../ProductList.xib; sourceTree = "<group>"; };
+		1B17BBFE1962501D0036643F /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		1B8A30BA194FFBA300830F64 /* product_management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = product_management.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8A30BD194FFBA300830F64 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B8A30BF194FFBA300830F64 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,6 +225,7 @@
 		1B8A30C5194FFBA300830F64 /* product_management */ = {
 			isa = PBXGroup;
 			children = (
+				1B17BBFE1962501D0036643F /* Constant.h */,
 				183169A11953D2DE00B51583 /* ProductList.xib */,
 				183169A01953D2DE00B51583 /* ProductList.m */,
 				1831699F1953D2DE00B51583 /* ProductList.h */,

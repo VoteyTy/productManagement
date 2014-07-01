@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Home">
             <connections>
+                <outlet property="scViewHome" destination="WJ2-jP-f2d" id="w4z-6C-8Ic"/>
                 <outlet property="segementControl" destination="r9v-iH-hHw" id="E5n-Ec-sg0"/>
                 <outlet property="tabBar" destination="nTN-fw-b86" id="jYg-3Z-XDw"/>
                 <outlet property="tabLogout" destination="U1H-bV-EXT" id="L6k-L9-JPP"/>
@@ -45,6 +46,13 @@
                         <outlet property="delegate" destination="-1" id="wby-L1-COn"/>
                     </connections>
                 </tabBar>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJ2-jP-f2d">
+                    <rect key="frame" x="0.0" y="92" width="320" height="419"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dUa-L9-KuO"/>
+                    </connections>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

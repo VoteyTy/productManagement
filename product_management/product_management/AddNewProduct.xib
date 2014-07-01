@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewProduct">
             <connections>
+                <outlet property="ivProduct" destination="0RY-PK-qAf" id="OfD-sh-hiN"/>
                 <outlet property="txtProductName" destination="8R9-6A-QU1" id="apm-8R-i7F"/>
                 <outlet property="txtProductPrice" destination="P9y-8G-CXp" id="Ikz-0X-awp"/>
                 <outlet property="txtProductionDescription" destination="5br-kI-XdK" id="mPc-xa-TXd"/>
@@ -116,6 +117,10 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RY-PK-qAf">
+                    <rect key="frame" x="34" y="351" width="234" height="147"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

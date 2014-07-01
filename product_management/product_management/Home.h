@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Home : UIViewController<UITabBarDelegate>
+@interface Home : UIViewController<UITabBarDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,retain) NSString * userId;
 
@@ -19,5 +19,8 @@
 @property (strong, nonatomic) IBOutlet UITabBarItem *tabLogout;
 @property (strong, nonatomic) IBOutlet UITabBarItem *tabUser;
 @property (strong, nonatomic) IBOutlet UIView *vhome;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scViewHome;
+
 
 @end

@@ -13,8 +13,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtProductName;
 @property (strong, nonatomic) IBOutlet UITextField *txtProductPrice;
 @property (strong, nonatomic) IBOutlet UITextField *txtProductionDescription;
-//@property (strong, nonatomic) IBOutlet UIImageView *ivProduct;
 
+@property (strong, nonatomic) IBOutlet UIImageView *ivProduct;
 - (IBAction)btnBrowseImage:(id)sender;
 - (IBAction)btnSelectCategories:(id)sender;
 - (IBAction)btnSaveProduct:(id)sender;

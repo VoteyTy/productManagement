@@ -9,7 +9,7 @@
 #import "EditProduct.h"
 #import "APIClientIOS.h"
 #import "AFHTTPRequestOperationManager.h"
-
+#import "Constant.h"
 
 @interface EditProduct ()
 
@@ -163,7 +163,7 @@ NSData *dataImage;
     NSTimeInterval currentInterval = [[NSDate date] timeIntervalSince1970];
     NSString *filename = [NSString stringWithFormat:@"%f.jpg", currentInterval];
     
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost:8888/productApi/"]];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:ApiBaseURL]];
     
     [manager.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
     [manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
@@ -186,13 +186,17 @@ NSData *dataImage;
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@",  responseObject);
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            
+            ProductList* objAddNewProduct = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
+            [self.navigationController pushViewController:objAddNewProduct animated:YES];
+            
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             NSLog(@"Error: %@ ***** %@", operation.responseString, error);
         }];
         [op start];
         //ProductList * objList = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
-        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+//        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
     }
     
 

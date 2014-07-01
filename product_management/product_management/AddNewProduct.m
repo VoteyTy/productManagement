@@ -7,6 +7,7 @@
 
 #import "AddNewProduct.h"
 #import "ProductList.h"
+#import "Constant.h"
 
 @interface AddNewProduct ()
 
@@ -28,7 +29,7 @@ bool moved;
 UIImage *imgProduct;
 NSData *dataImage;
 
-//@synthesize ivProduct;
+@synthesize ivProduct;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,7 +78,7 @@ NSData *dataImage;
     imgProduct = [info objectForKey:UIImagePickerControllerOriginalImage];
 //    self.imageView = photo;
     dataImage = UIImageJPEGRepresentation([info objectForKey:@"UIImagePickerControllerOriginalImage"],1);
-    //ivProduct.image = [[UIImage alloc] initWithData:dataImage];
+    ivProduct.image = [[UIImage alloc] initWithData:dataImage];
     //NSLog(@"Image Selected %@",[[UIImage alloc] initWithData:dataImage]);
     [picker dismissViewControllerAnimated:YES completion:nil];
     //NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
@@ -148,7 +149,7 @@ NSData *dataImage;
     NSTimeInterval currentInterval = [[NSDate date] timeIntervalSince1970];
     NSString *filename = [NSString stringWithFormat:@"%f.jpg", currentInterval];
     
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://localhost/productApi/"]];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:ApiBaseURL]];
     [manager.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
      if (!imgProduct || [txtAddProductName isEqualToString:@""] || [txtAddProductPrice isEqualToString:@""] || !getselected) {
          UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Please insert data in the fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -168,11 +169,10 @@ NSData *dataImage;
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"Success: %@",  responseObject);
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            ProductList* objAddNewProduct = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
             
+            ProductList* objAddNewProduct = [[ProductList alloc] initWithNibName:@"ProductList" bundle:nil];
             [self.navigationController pushViewController:objAddNewProduct animated:YES];
-
-                    
+                
         }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

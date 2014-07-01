@@ -7,8 +7,7 @@
 //
 
 #import "APIClientIOS.h"
-
-static NSString * const BaseUrl = @"http://localhost:8888/productApi/";
+#import "Constant.h"
 
 @implementation APIClientIOS
 
@@ -16,7 +15,7 @@ static NSString * const BaseUrl = @"http://localhost:8888/productApi/";
     static APIClientIOS *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[APIClientIOS alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]];
+        _sharedClient = [[APIClientIOS alloc] initWithBaseURL:[NSURL URLWithString:ApiBaseURL]];
         [_sharedClient.requestSerializer setValue:@"123" forHTTPHeaderField:@"apikey"];
         [_sharedClient setSecurityPolicy:[AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey]];
     });
